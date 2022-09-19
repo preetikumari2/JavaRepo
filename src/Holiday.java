@@ -70,8 +70,8 @@ public class Holiday {
 
     public static void main(String[] args){
         Holiday[] holiday = new Holiday[2];
-        Holiday H = new Holiday("Independence Day", 1, "july");
-        Holiday Holi = new Holiday("Holiday", 4, "march");
+        Holiday H = new Holiday("Independence Day", 4, "july");
+        Holiday Holi = new Holiday("Holiday", 4, "july");
         holiday[0] = H;
         holiday[1] = Holi;
         System.out.println(inSameMonth(H, Holi));
