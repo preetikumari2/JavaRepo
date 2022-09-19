@@ -3,12 +3,12 @@ import java.util.Scanner;
 public class Mango {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int row1 = sc.nextInt();
-        int col1 = sc.nextInt();
+        int row = sc.nextInt();
+        int col = sc.nextInt();
         int tree = sc.nextInt();
-        if (tree == 11 || tree == 12 || tree == 15 || tree == 16 || tree == 17 || tree == 18 || tree == 19 || tree == 20 || tree == 4 || tree == 3 || tree == 2)
-            System.out.println("yes");
+        if (row * 2 == tree || row * (col - 1) == tree)
+            System.out.println("It is a mango tree");
         else
-            System.out.println("No");
+            System.out.println("It is not a mango tree");
     }
 }
