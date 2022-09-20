@@ -34,6 +34,7 @@ public class Holiday {
     private String month;
 
     public int getDay() {
+
         return day;
     }
 
@@ -70,11 +71,11 @@ public class Holiday {
 
     public static void main(String[] args){
         Holiday[] holiday = new Holiday[2];
-        Holiday H = new Holiday("Independence Day", 4, "july");
-        Holiday Holi = new Holiday("Holiday", 4, "july");
-        holiday[0] = H;
-        holiday[1] = Holi;
-        System.out.println(inSameMonth(H, Holi));
+        Holiday Holi = new Holiday("Independence Day", 4, "july");
+        Holiday Holi2 = new Holiday("Holiday", 4, "july");
+        holiday[0] = Holi;
+        holiday[1] = Holi2;
+        System.out.println(inSameMonth(Holi, Holi2));
         System.out.println(avgDate(holiday));
 
     }
