@@ -27,43 +27,51 @@ Write a piece of code that creates an instance of the class Movie with the title
 studio “Eon Productions”, and the rating “"PG-13"”
 
  */
- public class Movie {
-     private String title;
-     private String studio;
-     private String rating;
+ public class Movie{
+     private final String title;
+     private final String studio;
+     private final String rating;
 
-     public Movie(String title, String studio, String rating){
- //        this.title = title;
- //        this.studio = studio;
- //        this.rating = rating;
-         System.out.println(title);
-         System.out.println(studio);
-         System.out.println(rating);
+     public String getStudio() {
+         return studio;
      }
-
-     public Movie(String title, String studio){
-         title = title;
-         studio = studio;
-         rating = "PG";
+     public Movie(String title, String studio, String rating) {
+         this.title = title;
+         this.studio=studio;
+         this.rating=rating;
      }
-
-     public static Movie[] getPG(Movie[] movies) {
-         Movie[] pgMov = new Movie[movies.length];
-         int newArrayIndex = 0;
-         for (int i = 0; i < movies.length; i++) {
-             if (movies[i].rating.equals("PG")) {
-                 pgMov[newArrayIndex] = movies[i];
-                 newArrayIndex++;
+     public Movie(String title, String studio) {
+         this.title = title;
+         this.studio=studio;
+         this.rating="PG";
+     }
+     public String getName(){
+         return title;
+     }
+     public Movie[] getPG(Movie[] movies){
+         Movie[] PGMovie=new Movie[movies.length];
+         int arrayindex=0;
+         for (Movie m: movies){
+             if (m.rating.equals("PG")) {
+                 PGMovie[arrayindex]=m;
+                 arrayindex++;
              }
          }
-         return pgMov;
+         return PGMovie;
      }
 
 
      public static void main(String[] args) {
-         Movie movie = new Movie("Casino Royale", "Eon Productions", "PG-13");
-         Movie movie2 = new Movie("Avatar","Lightstorm Entertainment");
-        // System.out.println(movie.toString());
-
+         Movie movie1 = new Movie("Casino Royale", "Eon Productions", "PG-13");
+         Movie movie2 = new Movie("Avatar", "lightstrom Entertainments");
+         Movie movie3 = new Movie("Death Note", "Eon Productions");
+         Movie[] mov = new Movie[3];
+         mov[0] = movie1;
+         mov[1] = movie2;
+         mov[2] = movie3;
+         for (Movie m: (mov[0].getPG(mov))){
+             if (m!=null)
+                 System.out.print(m.getName()+" ");
+         }
      }
-}
+ }
